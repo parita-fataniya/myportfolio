@@ -29,7 +29,6 @@
     color: var(--primary);
     letter-spacing: -0.02em;
     z-index: 1002;
-    /* Above mobile menu overlay */
 }
 
 /* Desktop Nav */
@@ -49,11 +48,30 @@
     color: var(--foreground);
     font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    position: relative;
 }
 
-.navLink:hover {
+.navLink:hover,
+.navLink.active {
     color: var(--primary);
+}
+
+.navLink.active {
+    font-weight: 600;
+}
+
+/* Add a small dot indicator for active state */
+.navLink.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
 }
 
 .resumeBtn {
@@ -122,9 +140,11 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--foreground);
+    transition: color 0.2s;
 }
 
-.mobileNavLink:hover {
+.mobileNavLink:hover,
+.mobileNavLink.active {
     color: var(--primary);
 }
 

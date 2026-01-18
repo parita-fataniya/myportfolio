@@ -64,8 +64,10 @@
     transition: color 0.2s;
 }
 
-.link:hover {
+.link:hover,
+.link.active {
     color: var(--primary);
+    font-weight: 600;
 }
 
 .bottom {

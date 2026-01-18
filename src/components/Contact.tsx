@@ -12,14 +12,11 @@ export default function Contact() {
             </p>
 
             <div className={styles.links}>
-                <a href="mailto:parita.fataniya@example.com" className={styles.link}>
-                    parita.fataniya@example.com
+                <a href="mailto:fataniyapari@gmail.com" className={styles.link}>
+                    fataniyapari@gmail.com
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
                     LinkedIn
-                </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    GitHub
                 </a>
             </div>
         </Section>

@@ -1,11 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useActiveSection } from '@/hooks/useActiveSection';
 import styles from './Footer.module.css';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+    const activeSection = useActiveSection();
+
+    const getLinkClass = (section: string) =>
+        `${styles.link} ${activeSection === section ? styles.active : ''}`;
 
     return (
         <footer className={styles.footer}>
@@ -22,25 +27,17 @@ export default function Footer() {
                     <div className={styles.linksColumn}>
                         <h4 className={styles.columnTitle}>Quick Links</h4>
                         <ul className={styles.linkList}>
-                            <li><Link href="#about" className={styles.link}>About</Link></li>
-                            <li><Link href="#skills" className={styles.link}>Skills</Link></li>
-                            <li><Link href="#projects" className={styles.link}>Projects</Link></li>
-                            <li><Link href="#experience" className={styles.link}>Experience</Link></li>
+                            <li><Link href="#about" className={getLinkClass('about')}>About</Link></li>
+                            <li><Link href="#skills" className={getLinkClass('skills')}>Skills</Link></li>
+                            <li><Link href="#projects" className={getLinkClass('projects')}>Projects</Link></li>
+                            <li><Link href="#experience" className={getLinkClass('experience')}>Experience</Link></li>
                         </ul>
                     </div>
 
                     <div className={styles.linksColumn}>
                         <h4 className={styles.columnTitle}>Connect</h4>
                         <div className={styles.socials}>
-                            <a
-                                href="https://github.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.socialIcon}
-                                aria-label="GitHub"
-                            >
-                                <FaGithub />
-                            </a>
+
                             <a
                                 href="https://linkedin.com"
                                 target="_blank"
