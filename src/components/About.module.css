@@ -1,0 +1,34 @@
+.content {
+    max-width: 800px;
+}
+
+.heading {
+    font-size: 2rem;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.text {
+    font-size: 1.15rem;
+    color: var(--secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 600;
+}

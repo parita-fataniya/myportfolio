@@ -1,0 +1,168 @@
+.skillsSection {
+    background: var(--background);
+    padding: 8rem 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--foreground);
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heading::after {
+    content: "EXPERTISE";
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    color: rgba(126, 34, 206, 0.03);
+    z-index: -1;
+    white-space: nowrap;
+    letter-spacing: 10px;
+}
+
+.bentoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(250px, auto));
+    gap: 1.5rem;
+}
+
+/* Card Base Styles */
+.card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(126, 34, 206, 0.08);
+    border-color: rgba(126, 34, 206, 0.2);
+}
+
+/* Specific Grid Areas */
+/* Backend: Large square (2x2) */
+.backend {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: linear-gradient(135deg, #fff 0%, #faf5ff 100%);
+}
+
+/* Databases: Tall narrow */
+.db {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Cloud: Wide */
+.cloud {
+    grid-column: span 2;
+}
+
+/* Frontend: Standard */
+.frontend {
+    grid-column: span 1;
+}
+
+/* Content Styling */
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.iconBox {
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.techTag {
+    padding: 0.6rem 1.2rem;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    font-weight: 500;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Specific styling for the main backend card */
+.backend .techTag {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 968px) {
+    .bentoGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .backend,
+    .db,
+    .cloud,
+    .frontend {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .backend {
+        min-height: 400px;
+    }
+
+    .heading::after {
+        font-size: 3rem;
+    }
+}

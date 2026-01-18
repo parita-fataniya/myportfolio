@@ -1,0 +1,65 @@
+.section {
+    max-width: 800px;
+}
+
+.heading {
+    font-size: 2rem;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.item {
+    border-left: 2px solid var(--card-border);
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.item:last-child {
+    border-left-color: transparent;
+}
+
+.item::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    box-shadow: 0 0 0 4px #fff;
+    /* White ring for separation */
+}
+
+.role {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.company {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-family: monospace;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.list {
+    padding-left: 1rem;
+}
+
+.listItem {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}

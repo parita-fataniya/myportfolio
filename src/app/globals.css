@@ -1,27 +1,24 @@
 :root {
+  /* Minimal Theme Variables */
   --background: #ffffff;
-  --foreground: #171717;
-}
+  --foreground: #111827;
+  /* Gray 900 */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --primary: #7e22ce;
+  /* Purple 700 */
+  --primary-hover: #6b21a8;
+  /* Purple 800 */
+  --secondary: #4b5563;
+  /* Gray 600 */
+  --muted: #9ca3af;
+  /* Gray 400 */
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  --card-bg: #fafafa;
+  /* Gray 50 */
+  --card-border: #e5e7eb;
+  /* Gray 200 */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -30,13 +27,61 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8b4fe;
+  /* Purple 300 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b060ff;
+  /* Purple 500 */
+}
+
+/* Utility */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+button {
+  cursor: pointer;
 }
